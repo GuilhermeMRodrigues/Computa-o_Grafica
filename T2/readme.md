@@ -9,5 +9,27 @@ No incio alguns erros foram apresentados durante os testes, como o triangulo sen
   export MESA_GLSL_VERSION_OVERRIDE=330
   
   
+### Resultado do primero teste:  
+<p align="center">
+  <img src="https://github.com/GuilhermeMRodrigues/Computacao_Grafica/blob/master/imagens/traingulo_branco.png" />
+</p>
   
   
+### Resultado do segundo teste:  
+
+<p align="center">
+  <img src="https://github.com/GuilhermeMRodrigues/Computacao_Grafica/blob/master/imagens/triangulorosa.png" />
+</p>
+
+### Resultado Final: 
+
+<p align="center">
+  <img src="https://github.com/GuilhermeMRodrigues/Computacao_Grafica/blob/master/imagens/triangulocolorido.png" />
+</p>
+
+# Abaixo podemos ver o projeto sendo executado 
+
+
+<p align="center">
+  <img src="https://github.com/GuilhermeMRodrigues/Computacao_Grafica/blob/master/imagens/cg_gravacao.gif" />
+</p>
