@@ -135,3 +135,39 @@ Aqui devemos modificiar a matriz VIEW de forma que a imagem gerada pelo programa
 <p align="center">
   <img src="https://github.com/GuilhermeMRodrigues/Computacao_Grafica/blob/master/imagens/exercicio4.png" />
 </p>
+
+## Exercício 5 - Transformações Livres
+
+Aqui devemos modificar as três matrizes, afim de gerar uma cena diferente das apresentadas anteriormente. Com isso temos as seguintes transformações nas matrizes:
+
+Matriz Model
+````        
+float model_array[16] = {2.0f, 0.0f, 0.0f, 0.0f, 
+                         0.0f, 1.7f, 0.0f, 0.0f, 
+                         0.0f, 0.0f, 1.0f, 0.0f, 
+                         0.0f, 0.0f, 0.0f, 1.0f};
+glm::mat4 model_mat = glm::make_mat4(model_array);
+````
+
+Matriz View
+````        
+float view_array[16] = {-1.0f, 0.0f, 0.0f, 0.0f, 
+                         0.0f, -1.0f, 0.0f, 0.0f, 
+                         0.0f, 0.0f, 1.0f, 0.0f, 
+                         0.0f, 0.0f, 0.0f, 1.0f};
+glm::mat4 view_mat = glm::make_mat4(view_array);
+````
+
+Matriz Projection
+````        
+float proj_array[16] = {1.0f, 0.0f, 0.0f, 0.0f, 
+                        0.0f, 1.0f, 0.0f, 0.0f, 
+                        0.0f, 0.0f, 1.0f, -2.0f, 
+                        0.0f, 0.0f, -0.5f, 1.0f};
+glm::mat4 proj_mat = glm::make_mat4(proj_array);
+````
+Com essas modificações obtemos o seguinte resultado: 
+
+<p align="center">
+  <img src="https://github.com/GuilhermeMRodrigues/Computacao_Grafica/blob/master/imagens/exercicio5.png" />
+</p>
