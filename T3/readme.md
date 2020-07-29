@@ -40,7 +40,6 @@ float view_array[16] = {1.0f, 0.0f, 0.0f, 0.0f,
                         0.0f, 1.0f, 0.0f, 0.0f, 
                         0.0f, 0.0f, 1.0f, 0.0f, 
                         0.0f, 0.0f, 0.0f, 1.0f};
-
 glm::mat4 view_mat = glm::make_mat4(view_array);
 ````
 #### Matriz Projection
@@ -49,7 +48,6 @@ float proj_array[16] = {1.0f, 0.0f, 0.0f, 0.0f,
                         0.0f, 1.0f, 0.0f, 0.0f, 
                         0.0f, 0.0f, 1.0f, 0.0f, 
                         0.0f, 0.0f, 0.0f, 1.0f};
-
 glm::mat4 proj_mat = glm::make_mat4(proj_array);
 
 ````
@@ -128,4 +126,12 @@ glm::mat4 proj_mat = glm::make_mat4(proj_array);
 
 <p align="center">
   <img src="https://github.com/GuilhermeMRodrigues/Computacao_Grafica/blob/master/imagens/resposta_EXERCICIO3.png" />
+</p>
+
+## Exercício 4 - Posição da Câmera
+
+Aqui devemos modificiar a matriz VIEW de forma que a imagem gerada pelo programa fique como a da figura abaixo:
+
+<p align="center">
+  <img src="https://github.com/GuilhermeMRodrigues/Computacao_Grafica/blob/master/imagens/exercicio4.png" />
 </p>
