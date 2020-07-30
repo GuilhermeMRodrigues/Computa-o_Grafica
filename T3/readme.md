@@ -136,6 +136,17 @@ Aqui devemos modificiar a matriz VIEW de forma que a imagem gerada pelo programa
   <img src="https://github.com/GuilhermeMRodrigues/Computacao_Grafica/blob/master/imagens/exercicio4.png" />
 </p>
 
+Diante disso, faz-se necessário a transformação do Espaço do Universo para o da Câmera representando uma mudança de sistemas de coordenadas que irá levar os vértices do objeto para o da câmera, realizando-se assim a mudança de base. Nesse processo precisa-se definir a posição da câmera no espaço através dos vetores: Posição da Câmera, Direção da Câmera , Up Vector. Lembrando que eles devem estar no sistema ortogonal e retornando assim a Mview que será a matriz resultante da multiplicação da base transposta pela matriz de translação.
+
+<p align="center">
+  <img src= "imagem 1" />
+</p>
+
+<p align="center">
+  <img src= "imagem 2" />
+</p>
+
+
 ## Exercício 5 - Transformações Livres
 
 Aqui devemos modificar as três matrizes, afim de gerar uma cena diferente das apresentadas anteriormente. Com isso temos as seguintes transformações nas matrizes:
