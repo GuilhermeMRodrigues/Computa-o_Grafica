@@ -139,17 +139,54 @@ Aqui devemos modificiar a matriz VIEW de forma que a imagem gerada pelo programa
 Diante disso, faz-se necessário a transformação do Espaço do Universo para o da Câmera representando uma mudança de sistemas de coordenadas que irá levar os vértices do objeto para o da câmera, realizando-se assim a mudança de base. Nesse processo precisa-se definir a posição da câmera no espaço através dos vetores: Posição da Câmera, Direção da Câmera , Up Vector. Lembrando que eles devem estar no sistema ortogonal e retornando assim a Mview que será a matriz resultante da multiplicação da base transposta pela matriz de translação.
 
 <p align="center">
-  <img src= "imagem 1" />
+  <img src= "https://github.com/GuilhermeMRodrigues/Computacao_Grafica/blob/master/imagens/imagem1.png" />
 </p>
 
 <p align="center">
-  <img src= "imagem 2" />
+  <img src= "https://github.com/GuilhermeMRodrigues/Computacao_Grafica/blob/master/imagens/imagem2.png" />
+</p>
+
+Fazendo a implementação dessas matrizes obtemos o codigo a seguir:
+
+
+````        
+    glm::vec3 pos_cam = glm::vec3(-0.1f, 0.1f, 0.25f); //vetor posição da camera
+    glm::vec3 up_cam = glm::vec3(0.0f, 1.0f, 0.0f);//vetor up da camera
+    glm::vec3 ponto_cam = glm::vec3(0.0f, 0.0f, 0.0f);//vetor ponto que a camera esta apontando
+    
+    
+    glm::vec3 z_cam = -glm::normalize(ponto_cam - pos_cam);
+    glm::vec3 x_cam = glm::normalize(glm::cross(up_cam, z_cam));
+    glm::vec3 y_cam = glm::normalize(glm::cross(z_cam, x_cam));
+
+    float Bt_aux[16]={x_cam[0], y_cam[0], z_cam[0], 0.0f,
+                      x_cam[1], y_cam[1], z_cam[1], 0.0f,
+                      x_cam[2], y_cam[2], z_cam[2], 0.0f,
+                      0.0f,0.0f,0.0f, 1.0f};
+                  
+    float T_aux[16]={1.0f, 0.0f, 0.0f, 0.0f,   
+                     0.0f, 1.0f, 0.0f, 0.0f,
+                     0.0f, 0.0f, 1.0f, 0.0f,
+                    -pos_cam[0], -pos_cam[1], -pos_cam[2], 1.0f};
+                 
+    glm::mat4 T = glm::make_mat4(T_aux);
+    glm::mat4 Bt = glm::make_mat4(Bt_aux);
+    
+    glm:: mat4 view_mat = Bt * T;
+````
+
+Com a modficação da matriz de Projeção no exercicio anterior e com a essa nova matriz VIEW o programa gera a seguinte saída:
+
+
+<p align="center">
+  <img src= "https://github.com/GuilhermeMRodrigues/Computacao_Grafica/blob/master/imagens/resposta_exercicio4.png" />
 </p>
 
 
 ## Exercício 5 - Transformações Livres
 
 Aqui devemos modificar as três matrizes, afim de gerar uma cena diferente das apresentadas anteriormente. Com isso temos as seguintes transformações nas matrizes:
+
 
 Matriz Model
 ````        
@@ -182,3 +219,13 @@ Com essas modificações obtemos o seguinte resultado:
 <p align="center">
   <img src="https://github.com/GuilhermeMRodrigues/Computacao_Grafica/blob/master/imagens/exercicio5.png" />
 </p>
+
+## Referencias e Links
+
+[1] https://glm.g-truc.net/0.9.9/index.html
+
+
+[2] http://glew.sourceforge.net/
+
+
+[3] Slides Do Professor Disponibilizados no Sigaa
