@@ -73,3 +73,38 @@ Obtemos o resultado esperado, ilustrado na figura abaixo:
 <p align="center">
   <img src="https://github.com/GuilhermeMRodrigues/Computacao_Grafica/blob/master/imagens/xicara_exercicio1.jpeg" />
 </p>
+
+# Exercicio 2
+Modificar o vertex shader (arquivo vertex_shader.glsl) do exercício anterior de forma que ele passe
+a incluir, além do modelo de iluminação ambiente e difuso, também o modelo especular, ou de Phong.
+Para isto, será necessário calcular o vetor R, de reflexão da luz L, e o vetor da câmera V, que aponta
+do vértice em questão para a câmera. Após a implementação, se tudo estiver correto, o resultado obtido deverá ser igual ao da figura abaixo:
+
+<p align="center">
+  <img src="https://github.com/GuilhermeMRodrigues/Computacao_Grafica/blob/master/imagens/exe2.jpeg" />
+</p>
+
+Para isto é preciso calcular o vetor R, de reflexão da luz L e o vetor V, que aponta do vértice em questão para a camera, com isso temos:
+
+````        
+vec3 R = -reflect(L, N);
+
+vec3 V = normalize(cam_pos - (model_mat * vec4(obj_spc_vertex_pos, 1.0)).xyz);
+````
+
+Agora devemos calcular o cos(α), para formular o modelo de iluminação difuso da seguinte forma:
+
+````        
+I = I a κ a + I p (κ d cos θ + κ s (cos α)^n )
+````
+
+obtemos o cos(α)^n, onde n = 65, da seguinte forma:
+
+````        
+    float cos_alfa = dot(R, V);
+    float r = cos_alfa*cos_alfa*cos_alfa*cos_alfa*cos_alfa*cos_alfa*cos_alfa*cos_alfa*cos_alfa*cos_alfa.....
+````
+a função "pow" apresentou erro, não somente neste trabalho como também em trabalhos de colegas de sala de aula, com isso foi calculado a potenciação de forma manual, como mostrado acima. Assim, finalmente, obtivemos o resultado esperado que pode ser visto na imagem abaixo: 
+<p align="center">
+  <img src="https://github.com/GuilhermeMRodrigues/Computacao_Grafica/blob/master/imagens/respsota2_atv4.jpeg" />
+</p>
