@@ -104,7 +104,14 @@ obtemos o cos(α)^n, onde n = 65, da seguinte forma:
     float cos_alfa = dot(R, V);
     float r = cos_alfa*cos_alfa*cos_alfa*cos_alfa*cos_alfa*cos_alfa*cos_alfa*cos_alfa*cos_alfa*cos_alfa.....
 ````
-a função "pow" apresentou erro, não somente neste trabalho como também em trabalhos de colegas de sala de aula, com isso foi calculado a potenciação de forma manual, como mostrado acima. Assim, finalmente, obtivemos o resultado esperado que pode ser visto na imagem abaixo: 
+A função "pow" apresentou erro, não somente neste trabalho como também em trabalhos de colegas de sala de aula, com isso foi calculado a potenciação de forma manual, como mostrado acima. Assim, finalmente, obtivemos o resultado esperado que pode ser visto na imagem abaixo: 
 <p align="center">
   <img src="https://github.com/GuilhermeMRodrigues/Computacao_Grafica/blob/master/imagens/respsota2_atv4.jpeg" />
 </p>
+
+# Referências e Links
+[1] https://glm.g-truc.net/0.9.9/index.html
+
+[2] http://glew.sourceforge.net/
+
+[3] Slides Do Professor Disponibilizados no Sigaa
