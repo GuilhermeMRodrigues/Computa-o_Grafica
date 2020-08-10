@@ -2,7 +2,7 @@
 
 Este trabalho, tem como objetivo principal implementar transformações geométricas que compõem a estrutura do pipeline. Todas as implementações serão feitas com o auxilio da biblioteca GLM sendo executadas pelos shaders do OpenGL Moderno. 
 
-## Dependencias
+## Dependências
 
 O código disponibilizado depende de software de terceiros, como as bibliotecas GLM [1] e GLEW [2]. 
 
